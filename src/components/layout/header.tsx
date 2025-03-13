@@ -7,6 +7,8 @@ import { UserNav } from './user-nav';
 import ThemeToggle from './ThemeToggle/theme-toggle';
 import { MetaMaskProvider } from '@metamask/sdk-react';
 import { ConnectWalletButton } from '../ConnectWalletButton';
+import { useEffect } from 'react';
+import { ConnectTronlinktButton } from '../ConnectTronlinkButton';
 
 export default function Header() {
   const host =
@@ -21,6 +23,8 @@ export default function Header() {
     }
   };
 
+  useEffect(() => {});
+
   return (
     <header className='flex h-16 shrink-0 items-center justify-between gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12'>
       <div className='flex items-center gap-2 px-4'>
@@ -30,6 +34,7 @@ export default function Header() {
       </div>
 
       <div className='flex items-center gap-2 px-4'>
+        <ConnectTronlinktButton />
         <MetaMaskProvider debug={false} sdkOptions={sdkOptions}>
           <ConnectWalletButton />
         </MetaMaskProvider>
